@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tensor9.com/cli/reference.md
+docs: https://docs.tensor9.com/cli/reference.md
+summary:
+  types: [apiKey]
+  api_key_in: [environment, parameter]
+  oauth2_flows: []
+  notes: >-
+    Tensor9's programmatic surface is its CLI/control plane, authenticated with a
+    vendor API key. Tensor9 does not publish a public REST/OpenAPI API, so there
+    are no OpenAPI-declared securitySchemes to derive from; this profile is taken
+    from the documented CLI authentication model.
+schemes:
+  - name: T9_API_KEY
+    type: apiKey
+    in: environment
+    parameter: T9_API_KEY
+    description: >-
+      API key supplied to the tensor9 CLI via the T9_API_KEY environment
+      variable. Required by most commands.
+    sources: [https://docs.tensor9.com/cli/reference.md]
+  - name: apiKey-flag
+    type: apiKey
+    in: parameter
+    parameter: -apiKey
+    description: >-
+      API key passed directly to a tensor9 command via the -apiKey flag as an
+      alternative to the T9_API_KEY environment variable.
+    sources: [https://docs.tensor9.com/cli/reference.md]
+related:
+  - customer-side security model: https://docs.tensor9.com/customer/security/security-model.md
+  - credentials and secrets: https://docs.tensor9.com/customer/security/credentials-and-secrets.md
+  - signing keys: https://docs.tensor9.com/customer/security/signing-keys.md

@@ -1,9 +1,31 @@
 aid: tensor9
 name: Tensor9
-description: Tensor9 is a company surfaced as a portfolio company of wing-venture-capital and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Tensor9 is an enterprise BYOC (bring-your-own-cloud) / any-prem software
+  deployment platform that lets software and AI vendors deploy their existing
+  cloud-native stack into customer-owned environments — other public clouds,
+  private VPCs, Kubernetes, or on-prem data centers — without rearchitecting.
+  It compiles a vendor's existing infrastructure-as-code (Terraform/OpenTofu,
+  CloudFormation, Helm, Docker Compose) into equivalent deployments, running a
+  customer-side appliance and a digital twin so vendors get continuous updates,
+  streamed observability, and zero-trust remote operations while customer data
+  never leaves the customer's boundary. The programmatic surface is the tensor9
+  CLI / control plane (API-key authenticated); Tensor9 does not publish a public
+  REST/OpenAPI API. Backed by Wing Venture Capital. SOC 2 Type II attested.
 url: https://raw.githubusercontent.com/api-evangelist/tensor9/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.tensor9.com/wp-content/uploads/2026/01/OGImage.jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,9 +34,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Deployment
+- BYOC
+- Cloud Portability
+- Infrastructure as Code
+- Kubernetes
+- On-Premises
+- Security
+- DevOps
+- CLI
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +55,42 @@ maintainers:
 common:
 - type: Website
   url: https://www.tensor9.com/
+- type: Documentation
+  url: https://docs.tensor9.com/
+- type: GettingStarted
+  url: https://docs.tensor9.com/customer/getting-started/overview.md
+- type: CLI
+  url: cli/tensor9-cli.yml
+- type: Authentication
+  url: authentication/tensor9-authentication.yml
+- type: Packages
+  url: packages/tensor9-packages.yml
+- type: LLMsTxt
+  url: llms/tensor9-llms.txt
+- type: Conformance
+  url: conformance/tensor9-conformance.yml
+- type: Compliance
+  url: https://www.tensor9.com/product/security-principles/
+- type: DomainSecurity
+  url: security/tensor9-domain-security.yml
+- type: Pricing
+  url: https://www.tensor9.com/pricing/
+- type: SignUp
+  url: https://www.tensor9.com/book-a-demo/
+- type: Support
+  url: https://www.tensor9.com/contact/
+- type: Blog
+  url: https://www.tensor9.com/blog/
+- type: TermsOfService
+  url: https://www.tensor9.com/terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.tensor9.com/privacy-policy/
+- type: X
+  url: https://twitter.com/tensor9ine
+- type: LinkedIn
+  url: https://linkedin.com/company/tensor9
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

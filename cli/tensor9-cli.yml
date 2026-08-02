@@ -1,0 +1,91 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tensor9.com/cli/reference.md
+name: tensor9
+description: >-
+  First-party command-line interface for Tensor9, the vendor-side control plane
+  for compiling and shipping a software vendor's cloud-native stack into
+  customer-owned environments (BYOC / any-prem). The CLI is the primary
+  programmatic surface; Tensor9 does not publish a public REST/OpenAPI API.
+docs: https://docs.tensor9.com/cli/reference.md
+install:
+  - method: shell
+    command: curl -sSL https://t9-artifacts-prod-1.s3.us-west-2.amazonaws.com/install-latest.sh | sh
+    docs: https://docs.tensor9.com/cli/install.md
+  - method: self-update
+    command: tensor9 update
+authentication:
+  scheme: api-key
+  env: T9_API_KEY
+  flag: -apiKey
+  notes: Most commands require an API key, supplied via the T9_API_KEY environment variable or the -apiKey parameter.
+usage: tensor9 <command> [options]
+help: tensor9 help <command-group>
+command_groups:
+  - name: general
+    description: Help, environment, reporting, portal and identity utilities.
+    commands: [help, env, report, portal, whoami, update, install]
+  - name: vendor
+    description: Vendor setup and management.
+    commands: [vendor setup, vendor report, vendor upgrade, vendor tailscale onboard, vendor tunnel enforce]
+  - name: iam
+    description: Vendor account management — inviting teammates, operator accounts, recovery.
+    commands: [configure, iam user invite, iam user list, iam user revoke, iam account recover]
+  - name: app
+    description: Application management.
+    commands: [app create, app signup-link, app list, app retrieve]
+  - name: stack
+    description: Stack and release management (publish, bind, releases, bundles).
+    commands:
+      - stack publish
+      - stack bind
+      - stack unbind
+      - stack release create
+      - stack release retire
+      - stack list
+      - stack retrieve
+      - stack release list
+      - stack release download
+      - stack release-pending list
+      - stack release-bundle download
+      - stack release-bundle apply
+  - name: tf
+    description: Terraform / OpenTofu import utilities.
+    commands: [tf import]
+  - name: form-factor
+    description: Form factor management — targeting AWS, Azure, GCP, Kubernetes, on-prem, etc.
+    commands:
+      - svc-spec-doc template generate
+      - form-factor create
+      - form-factor export
+      - form-factor promote
+      - form-factor retire
+      - form-factor evolve
+      - form-factor version lifecycle
+  - name: appliance
+    description: Customer appliance setup and management.
+    commands:
+      - appliance setup create
+      - appliance setup list
+      - appliance setup retrieve
+      - appliance list
+      - appliance retrieve
+      - appliance check
+      - appliance setup
+      - machine setup
+  - name: install
+    description: Listing app installs across appliances.
+    commands: [install list]
+  - name: kubernetes
+    description: Kubernetes RBAC roles and EKS access.
+    commands: [kube role list, kube role enable, kube role disable, aws eks grant-access]
+  - name: tailscale
+    description: Tailscale tailnet utilities (ACL setup, pre-auth key generation).
+    commands: [tailscale acl setup, tailscale key generate]
+key_flows:
+  - name: Publish and release a stack
+    steps: [stack publish, stack release create]
+  - name: Onboard a customer appliance
+    steps: [appliance setup create, appliance list, appliance check]
+  - name: Manage a form factor for a target environment
+    steps: [form-factor create, form-factor promote, form-factor version lifecycle]

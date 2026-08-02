@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tensor9.com/cli/install.md
+notes: >-
+  Tensor9 distributes a first-party CLI binary via an install script (not a
+  language package registry). No first-party client SDK libraries were found on
+  npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, or crates.io
+  as of this pass. The CLI command surface is catalogued in cli/tensor9-cli.yml.
+packages:
+  - kind: cli
+    language: binary
+    registry: vendor-hosted
+    name: tensor9
+    url: https://docs.tensor9.com/cli/install.md
+    install: curl -sSL https://t9-artifacts-prod-1.s3.us-west-2.amazonaws.com/install-latest.sh | sh
+    official: true

@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.tensor9.com/product/security-principles/
+notes: >-
+  Tensor9 publishes SOC 2 Type II as its named compliance attestation on its
+  security principles page. No public OpenAPI is published, so cross-cutting API
+  standards (oauth2/oidc/rfc9457/etc.) cannot be derived from a spec; this file
+  captures the published compliance posture only.
+standards:
+  - id: soc2-type-ii
+    conforms: true
+    evidence: SOC 2 Type II attestation stated on https://www.tensor9.com/product/security-principles/
+  - id: iso-27001
+    conforms: false
+  - id: hipaa
+    conforms: false
+  - id: pci-dss
+    conforms: false
+  - id: fedramp
+    conforms: false
+compliance:
+  program: SOC 2 Type II
+  url: https://www.tensor9.com/product/security-principles/
